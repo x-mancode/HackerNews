@@ -16,6 +16,10 @@
     ```console
     dotnet run
     ```
+4. Access API.
+   e.g. http://localhost:65241/news/15 will return 15 news
+
+       
 Things pending will be done by tommorrow :
 - Caching implementation
 - Error handling 
