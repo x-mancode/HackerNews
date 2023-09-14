@@ -18,10 +18,10 @@ namespace HackerNews.Controllers
             _hackerNewsService = hackerNewsService;
         }
         [HttpGet()]
-        [Route("{id:int}")]
-        public async Task<List<Model.News>> getStories(int id)
+        [Route("{numberOfStories:int}")]
+        public async Task<IEnumerable<Model.News>> getStories(int numberOfStories)
         {
-            return await _hackerNewsService.GetStories(3);
+            return await _hackerNewsService.GetStories(numberOfStories);
         }
     }
 }

@@ -26,14 +26,15 @@ namespace HackerNews.Services
 			_options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 		}
 
-		public async Task<List<Model.News>> GetStories(int numberOfStories)
+		public async Task<IEnumerable<Model.News>> GetStories(int numberOfStories)
 		{	
              var stories= await _hackerNewsClient.GetStoriesId();
             List<Model.HackerNews> news = await _hackerNewsClient.GetStories(stories);
 
 			var Result = _mpper.Map<List<Model.News>>(news);
 
-			return Result.OrderByDescending(r => r.Score).ToList<Model.News>();
+			return Result.OrderByDescending(r => r.Score).ToList<Model.News>().Take(numberOfStories);
+			
         }
 	}
 }

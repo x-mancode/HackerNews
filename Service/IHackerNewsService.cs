@@ -6,7 +6,7 @@ namespace HackerNews.Services
 {
 	public interface IHackerNewsService
     {
-		Task<List<Model.News>> GetStories(int numberOfStories);
+		Task<IEnumerable<Model.News>> GetStories(int numberOfStories);
 
 	}
 }
