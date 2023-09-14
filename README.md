@@ -16,3 +16,7 @@
     ```console
     dotnet run
     ```
+Things can be improved are below:>
+Caching implementation
+Error handling 
+Swagger integration
