@@ -16,7 +16,7 @@
     ```console
     dotnet run
     ```
-Things can be improved are below:
+Things pending will be done by tommorrow :
 - Caching implementation
 - Error handling 
 - Swagger integration
