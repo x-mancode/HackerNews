@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -58,9 +57,9 @@ namespace HackerNews.Clients
             //}
         }
 
-        public async Task<List<Model.HackerNews>> GetStories(int[] storiesId)
+        public async Task<List<Models.HackerNews>> GetStories(int[] storiesId)
         {
-            List<Model.HackerNews> resultNews= new List<Model.HackerNews>();
+            List<Models.HackerNews> resultNews= new List<Models.HackerNews>();
             var stories = new List<object>();
             var batchSize = 50;
             int numberOfBatches = (int)Math.Ceiling((double)storiesId.Length / batchSize);
@@ -80,7 +79,7 @@ namespace HackerNews.Clients
                     using (var reader = new StreamReader(stream))
                     {
                         var result = reader.ReadToEnd();
-                        resultNews.Add(JsonSerializer.Deserialize<Model.HackerNews>(result, _options));
+                        resultNews.Add(JsonSerializer.Deserialize<Models.HackerNews>(result, _options));
                     }
                 }
             }

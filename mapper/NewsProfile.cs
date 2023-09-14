@@ -12,7 +12,7 @@ namespace HackerNews.mapper
         public NewsProfile()
             {
 
-            CreateMap<Model.HackerNews, Model.News>()
+            CreateMap<Models.HackerNews, Models.News>()
                 .ForMember(dest => dest.PostedBy, src => src.MapFrom(src => src.by))
                 .ForMember(dest => dest.CommentCount, src => src.MapFrom(src => src.descendants))
                 .ForMember(dest => dest.Time, src => src.MapFrom(src => DateTimeOffset.FromUnixTimeSeconds(src.time)));

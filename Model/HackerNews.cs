@@ -1,7 +1,5 @@
-﻿using AutoMapper.Execution;
-using System;
-
-namespace HackerNews.Model
+﻿
+namespace HackerNews.Models
 {
     public class HackerNews
     {
