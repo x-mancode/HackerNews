@@ -24,3 +24,4 @@
        
 Things pending  :
 - Swagger integration
+- Unit test cases
